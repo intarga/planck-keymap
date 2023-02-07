@@ -21,9 +21,6 @@
 enum planck_layers {
   _COLEMAK,
   _QWERTY,
-  // _FERRIS,
-  // _L2,
-  // _L3,
   _LOWER,
   _RAISE,
   _ADJUST
@@ -67,7 +64,6 @@ enum planck_keycodes {
 #define TO_COLE TO(_COLEMAK)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-
 [_COLEMAK] = LAYOUT_planck_grid(
     KC_LCTL, KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_QUOT, KC_LALT,
     KC_ESC,  KC_A,    HOME_R,  HOME_S,  HOME_T,  KC_D,    KC_H,    HOME_N,  HOME_E,  HOME_I,  KC_O,    KC_BSPC,
@@ -98,26 +94,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     QWERTY,  KC_F9,   KC_F10,  KC_F11,  KC_F12,  MUV_IN,  MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  TERM_ON, TERM_OFF,
     DEBUG,   _______, _______, _______, _______, BACKLIT, BACKLIT, _______, _______,  _______, _______, _______
 )
-
-// [_FERRIS] = LAYOUT_planck_grid(
-//     KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,    _______, _______, KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN,
-//     HOME_A,  HOME_R,  HOME_S,  HOME_T,  KC_D,    _______, _______, KC_H,    HOME_N,  HOME_E,  HOME_I,  HOME_O,
-//     KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    _______, _______, KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,
-//     _______, _______, _______, L3,      KC_SPC,  _______, _______, KC_SPC,  L2,      _______, _______, _______
-// ),
-
-// [_L2] = LAYOUT_planck_grid(
-//     KC_0,    KC_1,    KC_2,    KC_3,    KC_GRV,  _______, _______, KC_LALT, KC_LBRC, KC_RBRC, KC_TAB,  KC_ESC,
-//     KC_MINS, KC_4,    KC_5,    KC_6,    KC_QUOT, _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_BSPC,
-//     KC_EQL,  KC_7,    KC_8,    KC_9,    KC_BSLS, _______, _______, KC_LGUI, KC_LPRN, KC_RPRN, KC_TAB,  KC_ENT,
-//     _______, _______, _______, _______, KC_LSFT, _______, _______, KC_LCTL, L3,      _______, _______, _______
-// ),
-// [_L3] = LAYOUT_planck_grid(
-//     KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_LSFT, _______, _______, QWERTY,  COLEMAK, TO_COLE, _______, _______,
-//     KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_LCTL, _______, _______, QK_BOOT, KC_BRID, KC_BRIU, KC_VOLD, KC_VOLU,
-//     KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_LALT, _______, _______, DEBUG,   KC_MRWD, KC_MPLY, KC_MFFD, KC_MUTE,
-//     _______, _______, _______, _______, KC_LGUI, _______, _______, KC_ESC,  L2,      _______, _______, _______
-// ),
 };
 
 #ifdef AUDIO_ENABLE
