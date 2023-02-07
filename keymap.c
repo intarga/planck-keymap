@@ -58,11 +58,6 @@ enum planck_keycodes {
 #define LOWER MO(_LOWER)
 #define RAISE MO(_RAISE)
 
-// #define L1 TO(_FERRIS)
-// #define L2 MO(_L2)
-// #define L3 MO(_L3)
-#define TO_COLE TO(_COLEMAK)
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_COLEMAK] = LAYOUT_planck_grid(
     KC_LCTL, KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_QUOT, KC_LALT,
@@ -77,9 +72,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, KC_LGUI, RAISE,   KC_SPC,  KC_SPC,  LOWER,   KC_LSFT, _______, _______, _______
 ),
 [_LOWER] = LAYOUT_planck_grid(
-    _______, _______, _______, KC_SCLN, KC_GRV,  KC_LPRN, KC_RPRN, CTRL_D,  CTRL_U,  _______, _______, _______,
-    _______, KC_DEL,  KC_ESC,  KC_TAB,  KC_ENT,  KC_SCLN, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______,
-    _______, _______, _______, KC_BSLS, KC_TILD, KC_LBRC, KC_RBRC, KC_PGDN, KC_PGUP, _______, _______, _______,
+    _______, _______, _______, KC_SCLN, KC_GRV,  KC_LBRC, KC_RBRC, CTRL_U,  KC_UP,   _______, _______, _______,
+    _______, KC_DEL,  KC_ESC,  KC_TAB,  KC_ENT,  KC_LPRN, KC_RPRN, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______,
+    _______, _______, _______, KC_BSLS, KC_TILD, KC_LCBR, KC_RCBR, CTRL_D,  KC_PGDN, KC_PGUP, _______, _______,
     _______, _______, _______, _______, _______, KC_BSPC, KC_BSPC, _______, _______, _______, _______, _______
 ),
 [_RAISE] = LAYOUT_planck_grid(
