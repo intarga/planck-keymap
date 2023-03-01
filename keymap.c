@@ -49,6 +49,9 @@ enum planck_keycodes {
 #define NO_AA LALT(KC_A)
 #define NO_OE LALT(KC_O)
 
+// App switch shortcut
+#define SWITCH LALT(KC_TAB)
+
 // Ctrl U and D
 #define CTRL_U LCTL(KC_U)
 #define CTRL_D LCTL(KC_D)
@@ -73,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_LOWER] = LAYOUT_planck_grid(
     _______, _______, _______, KC_SCLN, KC_GRV,  NO_AA,   _______, CTRL_U,  CTRL_D,  _______, KC_TAB,  _______,
     _______, KC_DEL,  KC_ESC,  KC_TAB,  KC_ENT,  NO_OE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_BSPC, _______,
-    _______, _______, _______, KC_BSLS, KC_TILD, NO_AE,   _______, KC_PGDN, KC_PGUP, _______, KC_ENT,  _______,
+    _______, _______, _______, KC_BSLS, KC_TILD, NO_AE,   SWITCH,  KC_PGDN, KC_PGUP, _______, KC_ENT,  _______,
     _______, _______, _______, _______, _______, KC_BSPC, KC_BSPC, _______, _______, _______, _______, _______
 ),
 [_RAISE] = LAYOUT_planck_grid(
