@@ -74,7 +74,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, KC_LGUI, KC_LSFT, KC_SPC,  KC_SPC,  LOWER,   RAISE,   _______, _______, _______
 ),
 [_LOWER] = LAYOUT_planck_grid(
-    _______, _______, _______, KC_SCLN, KC_GRV,  NO_AA,   _______, CTRL_U,  CTRL_D,  _______, KC_TAB,  _______,
+    _______, _______, _______, KC_SCLN, KC_GRV,  NO_AA,   _______, CTRL_D,  CTRL_U,  _______, KC_TAB,  _______,
     _______, KC_DEL,  KC_ESC,  KC_TAB,  KC_ENT,  NO_OE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_BSPC, _______,
     _______, _______, _______, KC_BSLS, KC_TILD, NO_AE,   SWITCH,  KC_PGDN, KC_PGUP, _______, KC_ENT,  _______,
     _______, _______, _______, _______, _______, KC_BSPC, KC_BSPC, _______, _______, _______, _______, _______
