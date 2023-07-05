@@ -20,6 +20,7 @@
 enum planck_layers {
   _COLEMAK,
   _QWERTY,
+  _FCTORIO,
   _LOWER,
   _RAISE,
   _ADJUST
@@ -28,6 +29,7 @@ enum planck_layers {
 enum planck_keycodes {
   QWERTY = SAFE_RANGE,
   COLEMAK,
+  FCTORIO,
   FERRIS,
   PLOVER,
   BACKLIT,
@@ -73,6 +75,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT ,
     _______, _______, _______, KC_LGUI, KC_LSFT, KC_SPC,  KC_SPC,  LOWER,   RAISE,   _______, _______, _______
 ),
+[_FCTORIO] = LAYOUT_planck_grid(
+    KC_LCTL, KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_0,    KC_1,    KC_2,    KC_3,    KC_P,   
+    KC_ESC,  KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_4,    KC_5,    KC_6,    KC_SCLN,
+    KC_TAB,  KC_LCTL, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_7,    KC_8,    KC_9,    KC_SLSH,
+    _______, KC_LALT, KC_ENT,  KC_LGUI, KC_LSFT, KC_SPC,  KC_SPC,  LOWER,   RAISE,   _______, _______, _______
+),
 [_LOWER] = LAYOUT_planck_grid(
     _______, _______, _______, KC_SCLN, KC_GRV,  NO_AA,   _______, CTRL_D,  CTRL_U,  _______, KC_TAB,  _______,
     _______, KC_DEL,  KC_ESC,  KC_TAB,  KC_ENT,  NO_OE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_BSPC, _______,
@@ -89,7 +97,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     QK_BOOT, KC_F1,   KC_F2,   KC_F3,   KC_F4,   MU_MOD,  RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD,
     COLEMAK, KC_F5,   KC_F6,   KC_F7,   KC_F8,   MUV_DE,  RGB_TOG, RGB_MOD, AU_ON,   AU_OFF,  AG_NORM, AG_SWAP,
     QWERTY,  KC_F9,   KC_F10,  KC_F11,  KC_F12,  MUV_IN,  MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  TERM_ON, TERM_OFF,
-    DEBUG,   EE_CLR,  _______, _______, _______, BACKLIT, BACKLIT, _______, _______,  _______, _______, _______
+    DEBUG,   EE_CLR,  FCTORIO, _______, _______, BACKLIT, BACKLIT, _______, _______,  _______, _______, _______
 )
 };
 
@@ -114,6 +122,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case COLEMAK:
       if (record->event.pressed) {
         set_single_persistent_default_layer(_COLEMAK);
+      }
+      return false;
+      break;
+    case FCTORIO:
+      if (record->event.pressed) {
+        set_single_persistent_default_layer(_FCTORIO);
       }
       return false;
       break;
