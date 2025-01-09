@@ -84,10 +84,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 ),
 [_ADJUST] = LAYOUT_planck_grid(
-    QK_BOOT, KC_F1,   KC_F2,   KC_F3,   KC_F4,   MU_MOD,  RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD,
-    COLEMAK, KC_F5,   KC_F6,   KC_F7,   KC_F8,   MUV_DE,  RGB_TOG, RGB_MOD, AU_ON,   AU_OFF,  AG_NORM, AG_SWAP,
-    QWERTY,  KC_F9,   KC_F10,  KC_F11,  KC_F12,  MUV_IN,  MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  TERM_ON, TERM_OFF,
-    DEBUG,   EE_CLR,  FCTORIO, _______, _______, BACKLIT, BACKLIT, _______, _______,  _______, _______, _______
+    QK_BOOT, KC_F1,   KC_F2,   KC_F3,   KC_F4,   MU_NEXT, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD,
+    COLEMAK, KC_F5,   KC_F6,   KC_F7,   KC_F8,   AU_PREV, RGB_TOG, RGB_MOD, AU_ON,   AU_OFF,  AG_NORM, AG_SWAP,
+    QWERTY,  KC_F9,   KC_F10,  KC_F11,  KC_F12,  AU_NEXT, MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  _______, _______,
+    DB_TOGG, EE_CLR,  FCTORIO, _______, _______, BACKLIT, BACKLIT, _______, _______, _______, _______, _______
 )
 };
 
@@ -95,7 +95,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   float plover_song[][2]     = SONG(PLOVER_SOUND);
   float plover_gb_song[][2]  = SONG(PLOVER_GOODBYE_SOUND);
 #endif
-
+ 
 layer_state_t layer_state_set_user(layer_state_t state) {
   return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
 }
